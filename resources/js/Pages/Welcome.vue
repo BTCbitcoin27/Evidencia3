@@ -29,7 +29,9 @@
             <div>Customer: {{ order.customer_name }}</div>
             <div>Delivery Address: {{ order.delivery_address }}</div>
             <div>Status: {{ order.status }}</div>
-            <!-- Add more order details here -->
+            <div v-if="order.status === 'Delivered'">
+                <img :src="order.image_path2" alt="Delivered Image" />
+            </div>
         </div>
         <div v-else>
             <p v-if="invoice_number">No order found for invoice number: {{ invoice_number }}</p>
