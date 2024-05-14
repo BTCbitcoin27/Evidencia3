@@ -118,6 +118,9 @@
             <div class="order-info">Customer: {{ order.customer_name }}</div>
             <div class="order-info">Delivery Address: {{ order.delivery_address }}</div>
             <div class="order-info">Status: {{ order.status }}</div>
+            <div v-if="order.status === 'Delivered'">
+                <img :src="order.image_path2" alt="Delivered Image" />
+            </div>
             <!-- Add more order details here -->
         </div>
         <div v-else>
@@ -226,7 +229,7 @@ p {
     color: red;
 }
 
-/* Add your additional CSS styles here */
+
 .nav-links {
     display: flex;
     justify-content: space-between;
